@@ -1,0 +1,8 @@
+.card{
+    width: 250px;
+    border: 1px solid blueviolet;
+}
+
+:host{
+    display: flex;
+}
