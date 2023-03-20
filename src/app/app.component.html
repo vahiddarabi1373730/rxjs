@@ -1,4 +1,4 @@
 <label>ورودی</label>
 <input type="number" (input)="onChangeInput($any($event.target).value)" />
 <br />
-<label>{{ output | customPipe }}</label>
+<label>{{ output | pipe2 : "cm" }}</label>
