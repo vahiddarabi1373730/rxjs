@@ -3,7 +3,7 @@
     <li
       (click)="onPrevious()"
       class="page-item"
-      [ngClass]="currentItem === 0 ? 'disabled' : ''"
+      [disabled1]="{ disabled: currentItem === 0 }"
     >
       <a class="page-link" href="#">Previous</a>
     </li>
@@ -12,24 +12,22 @@
       <li
         *ngIf="checkWindowIndex(i)"
         class="page-item"
-        [ngClass]="currentItem === i ? 'active' : ''"
+        [disabled1]="{ active: currentItem == i }"
         (click)="currentItem = i"
       >
         <a class="page-link" href="#">{{ i + 1 }}</a>
-        {{ i | json }}
       </li>
     </ng-container>
 
     <li
-      [ngClass]="currentItem === items.length - 1 ? 'disabled' : ''"
       class="page-item"
       (click)="onNext()"
+      [disabled1]="{ disabled: currentItem === items.length - 1 }"
     >
       <a class="page-link" href="#">Next</a>
     </li>
   </ul>
 </nav>
-{{ currentItem | json }}
 
 <div style="width: 250px; height: 250px">
   <h2>{{ items[currentItem].title }}</h2>
