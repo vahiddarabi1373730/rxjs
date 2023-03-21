@@ -1,0 +1,23 @@
+<app-add-todo (emitForm)="onAddTodo($event)"></app-add-todo>
+<app-edit-todo
+  [editTodo]="edittodo"
+  (emitEditTodo)="onEditTodoService($event)"
+></app-edit-todo>
+<table *ngIf="todoservice.todo$ | async as todos">
+  <thead>
+    <th>Name</th>
+    <th>Time</th>
+    <th>Worker</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td>{{ todo.name }}</td>
+      <td>{{ todo.time }}</td>
+      <td>{{ todo.worker }}</td>
+      <button (click)="onDeleteTodo(todo.id)">Delete</button>
+      <button (click)="onEditTodo(todo)">Edit</button>
+    </tr>
+  </tbody>
+</table>
