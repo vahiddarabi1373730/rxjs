@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>subject</label>
+  <input type="text" formControlName="subject" />
+  <br />
+  <label>Text</label>
+  <input type="text" formControlName="text" />
+  <br />
+  <label>To</label>
+  <input type="text" formControlName="to" />
+  <br />
+  <label>From</label>
+  <input type="text" formControlName="from" />
+  <br />
+  <button type="submit">Submit</button>
+</form>

@@ -1,0 +1,18 @@
+<h1>ورود</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-input
+    [control]="f?.username"
+    placeholder="Username"
+    label="Username"
+    type="text"
+  ></app-input>
+  <br />
+  <app-input
+    [control]="form?.controls?.password"
+    placeholder="Password"
+    label="Password"
+    type="number"
+  ></app-input>
+
+  <button [disabled]="form.invalid" type="submit">SignUp</button>
+</form>

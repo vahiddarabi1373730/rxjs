@@ -1,0 +1,16 @@
+<div class="ui visible dimmer active">
+  <div class="ui modal visible active">
+    <i class="icon close" (click)="closeModal.emit()"></i>
+    <div class="header">
+      <ng-content select=".title"></ng-content>
+    </div>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+    <div class="actions actions-default"></div>
+    <button class="ui button primary" (click)="closeModal.emit()">Ok</button>
+    <div class="actions">
+      <ng-content select=".footer"></ng-content>
+    </div>
+  </div>
+</div>

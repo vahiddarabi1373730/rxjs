@@ -1,0 +1,33 @@
+<h1>ثبت نام</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <app-input
+    [control]="f?.username"
+    placeholder="Username"
+    label="Username"
+    type="text"
+  ></app-input>
+  <br />
+  <app-input
+    [control]="form?.controls?.password"
+    placeholder="Password"
+    label="Password"
+    type="number"
+  ></app-input>
+  <app-input
+    [control]="form.controls?.passwordConfirmation"
+    placeholder="PasswordConfirmation"
+    label="PasswordConfirmation"
+    type="number"
+  ></app-input>
+  <button [disabled]="form.invalid" type="submit">SignUp</button>
+  <div
+    [ngClass]="form.errors?.passwordDoNotMatch ? 'red' : ''"
+    *ngIf="
+      form.controls.passwordConfirmation.dirty &&
+      form.controls.passwordConfirmation.touched &&
+      form.errors?.passwordDoNotMatch
+    "
+  >
+    کلمه عبور با تکرار آن برابر نیست!!!!
+  </div>
+</form>

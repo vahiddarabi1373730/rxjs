@@ -1,0 +1,9 @@
+<ng-container *ngIf="showModal">
+  <app-modal (closeModal)="toggle()">
+    <h4 class="title">Header</h4>
+    <app-form class="form" [email]="email" (closeModal)="toggle()"></app-form>
+    <h6 class="footer">Footer</h6>
+  </app-modal>
+</ng-container>
+
+<button (click)="toggle()">Reply</button>
